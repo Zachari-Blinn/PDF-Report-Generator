@@ -7,6 +7,12 @@ const ReadFile = Util.promisify(Fs.readFile);
 
 class PuppeteerService {
 
+  /**
+   * Constructor of Puppeteer pdf generator
+   * @param { String } name 
+   * @param { String } logo 
+   * @param { Array } data 
+   */
   constructor (name, logo, data) {
     this.name = name;
     this.logo = logo;
@@ -17,7 +23,7 @@ class PuppeteerService {
    * Parse data and set html/ejs template
    * @return { Array } parsed data
    */
-  async template () {
+  static async template () {
     try {
       const dataPath = 'src/service/data.json';
       const rawdata = await ReadFile(dataPath);
@@ -46,7 +52,7 @@ class PuppeteerService {
    */
   async generate () {
     try {
-      const template = await this.template();
+      const template = await PuppeteerService.template();
 
       const browser = await puppeteer.launch({
         headless: true,
