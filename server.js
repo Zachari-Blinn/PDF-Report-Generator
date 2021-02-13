@@ -50,7 +50,9 @@ app.get('/pdfmake', async (req, res) => {
 app.get('/puppeteer', async (req, res) => {
   let puppeteer = new PuppeteerService("test", "test");
 
-  puppeteer.generate();
+  const test = await puppeteer.generate();
+
+  console.log(test);
 
   res.render('pages/index');
 })

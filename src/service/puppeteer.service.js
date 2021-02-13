@@ -7,12 +7,16 @@ const ReadFile = Util.promisify(Fs.readFile);
 
 class PuppeteerService {
 
-  constructor (name, logo, content) {
+  constructor (name, logo, data) {
     this.name = name;
     this.logo = logo;
-    this.content = content;
+    this.data = data;
   }
 
+  /**
+   * Parse data and set html/ejs template
+   * @return { Array } parsed data
+   */
   async template () {
     try {
       const dataPath = 'src/service/data.json';
@@ -21,7 +25,7 @@ class PuppeteerService {
 
       const data = {
         data: parsedData
-      }
+      };
 
       const templatePath = 'views/template/report.ejs';
 
@@ -29,12 +33,17 @@ class PuppeteerService {
 
       const template = ejs.compile(content);
 
-      return template(data)
+      return template(data);
     } catch (error) {
       console.log(error);
     }
   }
 
+  /**
+   * Generate PDF with template function
+   * @return { String } name
+   * @return { String } path
+   */
   async generate () {
     try {
       const template = await this.template();
@@ -72,6 +81,11 @@ class PuppeteerService {
       console.log(`[PUPPETEER] PDF report-${uuid}.pdf created!`);
   
       await browser.close();
+
+      return {
+        name: `report-${uuid}.pdf`,
+        path: `src/upload/puppeteer/report-${uuid}.pdf`
+      };
     } catch (error) {
       console.log(error);
     }
