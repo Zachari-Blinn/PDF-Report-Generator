@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    td, th {
+      border: 1px solid black;
+    }
+    .avoid {
+      page-break-inside: avoid !important;
+      margin: 4px 0 4px 0;  /* to keep the page break from cutting too close to the text in the div */
+    }
+    body {
+      margin: 2cm;
+    } 
+    thead {
+      display: table-header-group;
+      break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+  <h1>test</h1>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, sed tempora eum facere architecto doloremque odio enim totam culpa beatae dolores iusto commodi, officiis consequatur nisi inventore tempore sapiente atque!</p>
+  <table>
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>gender</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%for (let item in data){%>
+    <tr>
+      <td><%= data[item].id %></td>
+      <td><%= data[item].first_name %></td>
+      <td><%= data[item].last_name %></td>
+      <td><%= data[item].email %></td>
+      <td><%= data[item].gender %></td>
+    </tr>
+    <%}%>
+    </tbody>
+  </table>
+  </body>
+</html>
