@@ -3,7 +3,7 @@ const express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 const Util = require('util')
-const Fs = require('fs')  
+const Fs = require('fs')
 const ReadFile = Util.promisify(Fs.readFile);
 
 const app = express();
@@ -38,7 +38,7 @@ app.get('/report/pdf', async (req, res) => {
   const data = {
     data: parsedData
   }
-  
+
   res.render('template/report', data)
 })
 
@@ -48,11 +48,17 @@ app.get('/pdfmake', async (req, res) => {
 });
 
 app.get('/puppeteer', async (req, res) => {
-  let puppeteer = new PuppeteerService("test", "test");
+  let pdf = new PuppeteerService();
 
-  const pdf = await puppeteer.generate();
+  pdf.setFooter(`
+    <div style="color: lightgray; border-top: solid lightgray 1px; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
+      <span>This is a test message</span> - <span class="pageNumber"></span>
+    </div>
+  `);
 
-  console.log(pdf);
+  const generatedPdf = await pdf.generatePdf();
+
+  console.log(generatedPdf);
 
   res.render('pages/index');
 })

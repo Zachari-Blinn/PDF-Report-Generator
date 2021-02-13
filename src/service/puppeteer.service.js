@@ -7,11 +7,16 @@ const ReadFile = Util.promisify(Fs.readFile);
 
 class PuppeteerService {
 
+  // Private attribute
+  #header
+  #footer
+  #templateFooter
+
   /**
    * Constructor of Puppeteer pdf generator
-   * @param { String } name 
-   * @param { String } logo 
-   * @param { Array } data 
+   * @param {String} name 
+   * @param {String} logo 
+   * @param {Array} data 
    */
   constructor (name, logo, data) {
     this.name = name;
@@ -20,8 +25,29 @@ class PuppeteerService {
   }
 
   /**
+   * @param {String} str 
+   */
+  setFooter (str) {
+    this.footer = str;
+  }
+
+  /**
+   * @param {String} str 
+   */
+  setHeader (str) {
+    this.header = str;
+  }
+
+  /**
+   * @param {String} str 
+   */
+  setTemplatePath (str) {
+    this.templatePath = str;
+  }
+
+  /**
    * Parse data and set html/ejs template
-   * @return { Array } parsed data
+   * @return {Array} parsed data
    */
   static async template () {
     try {
@@ -29,7 +55,7 @@ class PuppeteerService {
 
       const data = {data: JSON.parse(rawdata)};
 
-      const content = await ReadFile('views/template/report.ejs', 'utf8');
+      const content = await ReadFile(this.templatePath ?? 'views/template/report.ejs', 'utf8');
 
       const template = ejs.compile(content);
 
@@ -41,10 +67,10 @@ class PuppeteerService {
 
   /**
    * Generate PDF with template function
-   * @return { String } name
-   * @return { String } path
+   * @return {String} name
+   * @return {String} path
    */
-  async generate () {
+  async generatePdf () {
     try {
       let uuid = await uuidv4();
 
@@ -67,11 +93,8 @@ class PuppeteerService {
           top: 100
         },
         displayHeaderFooter: true,
-        footerTemplate: `
-          <div style="color: lightgray; border-top: solid lightgray 1px; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
-            <span>This is a test message</span> - <span class="pageNumber"></span>
-          </div>
-        `,
+        headerTemplate: this.header ?? '',
+        footerTemplate: this.footer ?? '',
         printBackground: true
       });
     
