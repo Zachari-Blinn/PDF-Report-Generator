@@ -25,17 +25,11 @@ class PuppeteerService {
    */
   static async template () {
     try {
-      const dataPath = 'src/service/data.json';
-      const rawdata = await ReadFile(dataPath);
-      const parsedData = JSON.parse(rawdata);
+      const rawdata = await ReadFile('src/service/data.json');
 
-      const data = {
-        data: parsedData
-      };
+      const data = {data: JSON.parse(rawdata)};
 
-      const templatePath = 'views/template/report.ejs';
-
-      const content = await ReadFile(templatePath, 'utf8');
+      const content = await ReadFile('views/template/report.ejs', 'utf8');
 
       const template = ejs.compile(content);
 
@@ -52,28 +46,25 @@ class PuppeteerService {
    */
   async generate () {
     try {
-      const template = await PuppeteerService.template();
+      let uuid = await uuidv4();
 
-      const browser = await puppeteer.launch({
-        headless: true,
-      });
+      const browser = await puppeteer.launch({headless: true});
+
       const page = await browser.newPage();
+
+      const template = await PuppeteerService.template();
 
       await page.setContent(template);
 
       // generate pdf with custom config
-      let uuid = uuidv4();
-
-      await page.emulateMediaType('print');
-  
       await page.pdf({
         path: `src/upload/puppeteer/report-${uuid}.pdf`,
         format: 'A4',
         margin: {
-          bottom: 100, // minimum required for footer msg to display
+          bottom: 100,
           left: 35,
           right: 35,
-          top: 100,
+          top: 100
         },
         displayHeaderFooter: true,
         footerTemplate: `
@@ -81,11 +72,9 @@ class PuppeteerService {
             <span>This is a test message</span> - <span class="pageNumber"></span>
           </div>
         `,
-        printBackground: true,
+        printBackground: true
       });
-  
-      console.log(`[PUPPETEER] PDF report-${uuid}.pdf created!`);
-  
+    
       await browser.close();
 
       return {
