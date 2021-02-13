@@ -1,2 +1,3 @@
 node_modules
-src/upload
+src/upload/pdfMake
+src/upload/puppeteer
