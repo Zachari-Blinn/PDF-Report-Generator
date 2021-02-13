@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
 const { v4: uuidv4 } = require('uuid');
 const ejs = require('ejs');
-const Util = require('util')
-const Fs = require('fs')  
+const Util = require('util');
+const Fs = require('fs');
 const ReadFile = Util.promisify(Fs.readFile);
 
 class PuppeteerService {
