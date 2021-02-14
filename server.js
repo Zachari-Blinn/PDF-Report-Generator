@@ -58,9 +58,7 @@ app.get('/puppeteer', async (req, res) => {
 
   const generatedPdf = await pdf.generatePdf();
 
-  console.log(generatedPdf);
-
-  res.render('pages/index');
+  res.download(generatedPdf.path, 'report.pdf')
 })
 
 app.listen(port, () => {
