@@ -46,10 +46,17 @@ class PuppeteerService {
   }
 
   /**
+   * @param {JSON} parsedData
+   */
+  setParsedData (parsedData) {
+    this.parsedData = parsedData;
+  }
+
+  /**
    * Parse data and set html/ejs template
    * @return {Array} parsed data
    */
-  static async template () {
+  static async templateWithData () {
     try {
       const rawdata = await ReadFile('src/service/data.json');
 
@@ -57,9 +64,9 @@ class PuppeteerService {
 
       const content = await ReadFile(this.templatePath ?? 'views/template/report.ejs', 'utf8');
 
-      const template = ejs.compile(content);
+      const templateWithData = ejs.compile(content);
 
-      return template(data);
+      return templateWithData(data);
     } catch (error) {
       console.log(error);
     }
@@ -78,7 +85,7 @@ class PuppeteerService {
 
       const page = await browser.newPage();
 
-      const template = await PuppeteerService.template();
+      const template = await PuppeteerService.templateWithData();
 
       await page.setContent(template);
 
@@ -92,9 +99,9 @@ class PuppeteerService {
           right: 35,
           top: 100
         },
-        displayHeaderFooter: true,
-        headerTemplate: this.header ?? '',
-        footerTemplate: this.footer ?? '',
+        displayHeaderFooter: this.header || this.footer ? true : false, //if header or footer != null then display 
+        headerTemplate: this.header ?? '<div></div>',
+        footerTemplate: this.footer ?? '<div></div>',
         printBackground: true
       });
     
