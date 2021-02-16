@@ -21,21 +21,21 @@ class PuppeteerService {
   constructor (name, logo, parsedData) {
     this.name = name;
     this.logo = logo;
-    this.parsedData = parsedData;
+    this.#parsedData = parsedData;
   }
 
   /**
    * @param {String} html
    */
   setFooter (html) {
-    this.footer = html;
+    this.#footer = html;
   }
 
   /**
    * @param {String} html
    */
   setHeader (html) {
-    this.header = html;
+    this.#header = html;
   }
 
   /**
