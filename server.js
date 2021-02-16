@@ -53,6 +53,7 @@ app.get('/puppeteer', async (req, res) => {
   const rawData = await ReadFile('src/service/data.json');
   const parsedData = {data: JSON.parse(rawData)};
 
+  pdf.setTemplatePath('views/template/report.ejs');
   pdf.setParsedData(parsedData);
 
   pdf.setFooter(`

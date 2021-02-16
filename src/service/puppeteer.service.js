@@ -8,20 +8,29 @@ const ReadFile = Util.promisify(Fs.readFile);
 class PuppeteerService {
 
   // Private attribute
+  #name;
+  #logo;
   #header;
   #footer;
   #parsedData;
+  #templatePath;
 
   /**
    * Constructor of Puppeteer pdf generator
    * @param {String} name
    * @param {String} logo
+   * @param {String} header
+   * @param {String} footer
    * @param {JSON} parsedData
+   * @param {String} templatePath
    */
-  constructor (name, logo, parsedData) {
-    this.name = name;
-    this.logo = logo;
+  constructor (name, logo, header, footer, parsedData, templatePath) {
+    this.#name = name;
+    this.#logo = logo;
+    this.#header = header;
+    this.#footer = footer;
     this.#parsedData = parsedData;
+    this.#templatePath = templatePath;
   }
 
   /**
@@ -42,7 +51,7 @@ class PuppeteerService {
    * @param {String} path
    */
   setTemplatePath (path) {
-    this.templatePath = path;
+    this.#templatePath = path;
   }
 
   /**
@@ -52,19 +61,15 @@ class PuppeteerService {
     this.#parsedData = parsedData;
   }
 
-  getParsedData () {
-    return this.#parsedData;
-  }
-
   /**
    * Parse data and set html/ejs template
    * @return {Array} parsed data
    */
   async templateWithData () {
     try {
-      const data = this.getParsedData();
+      const data = this.#parsedData;
 
-      const content = await ReadFile(this.templatePath ?? 'views/template/report.ejs', 'utf8');
+      const content = await ReadFile(this.#templatePath, 'utf8');
 
       const templateWithData = ejs.compile(content);
 
@@ -101,9 +106,9 @@ class PuppeteerService {
           right: 35,
           top: 100
         },
-        displayHeaderFooter: !!(this.header || this.footer), //if header or footer != null then display
-        headerTemplate: this.header ?? '<div></div>',
-        footerTemplate: this.footer ?? '<div></div>',
+        displayHeaderFooter: !!(this.#header || this.#footer), //if header or footer != null then display
+        headerTemplate: this.#header ?? '<div></div>',
+        footerTemplate: this.#footer ?? '<div></div>',
         printBackground: true
       });
     
