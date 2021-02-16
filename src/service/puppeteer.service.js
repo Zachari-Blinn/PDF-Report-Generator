@@ -8,59 +8,61 @@ const ReadFile = Util.promisify(Fs.readFile);
 class PuppeteerService {
 
   // Private attribute
-  #header
-  #footer
-  #templateFooter
+  #header;
+  #footer;
+  #parsedData;
 
   /**
    * Constructor of Puppeteer pdf generator
-   * @param {String} name 
-   * @param {String} logo 
-   * @param {Array} data 
+   * @param {String} name
+   * @param {String} logo
+   * @param {JSON} parsedData
    */
-  constructor (name, logo, data) {
+  constructor (name, logo, parsedData) {
     this.name = name;
     this.logo = logo;
-    this.data = data;
+    this.parsedData = parsedData;
   }
 
   /**
-   * @param {String} str 
+   * @param {String} html
    */
-  setFooter (str) {
-    this.footer = str;
+  setFooter (html) {
+    this.footer = html;
   }
 
   /**
-   * @param {String} str 
+   * @param {String} html
    */
-  setHeader (str) {
-    this.header = str;
+  setHeader (html) {
+    this.header = html;
   }
 
   /**
-   * @param {String} str 
+   * @param {String} path
    */
-  setTemplatePath (str) {
-    this.templatePath = str;
+  setTemplatePath (path) {
+    this.templatePath = path;
   }
 
   /**
    * @param {JSON} parsedData
    */
   setParsedData (parsedData) {
-    this.parsedData = parsedData;
+    this.#parsedData = parsedData;
+  }
+
+  getParsedData () {
+    return this.#parsedData;
   }
 
   /**
    * Parse data and set html/ejs template
    * @return {Array} parsed data
    */
-  static async templateWithData () {
+  async templateWithData () {
     try {
-      const rawdata = await ReadFile('src/service/data.json');
-
-      const data = {data: JSON.parse(rawdata)};
+      const data = this.getParsedData();
 
       const content = await ReadFile(this.templatePath ?? 'views/template/report.ejs', 'utf8');
 
@@ -85,7 +87,7 @@ class PuppeteerService {
 
       const page = await browser.newPage();
 
-      const template = await PuppeteerService.templateWithData();
+      const template = await this.templateWithData();
 
       await page.setContent(template);
 
@@ -99,7 +101,7 @@ class PuppeteerService {
           right: 35,
           top: 100
         },
-        displayHeaderFooter: this.header || this.footer ? true : false, //if header or footer != null then display 
+        displayHeaderFooter: !!(this.header || this.footer), //if header or footer != null then display
         headerTemplate: this.header ?? '<div></div>',
         footerTemplate: this.footer ?? '<div></div>',
         printBackground: true

@@ -50,6 +50,11 @@ app.get('/pdfmake', async (req, res) => {
 app.get('/puppeteer', async (req, res) => {
   let pdf = new PuppeteerService();
 
+  const rawData = await ReadFile('src/service/data.json');
+  const parsedData = {data: JSON.parse(rawData)};
+
+  pdf.setParsedData(parsedData);
+
   pdf.setFooter(`
     <div style="color: lightgray; border-top: solid lightgray 1px; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
       <span>This is a test message</span> - <span class="pageNumber"></span>
