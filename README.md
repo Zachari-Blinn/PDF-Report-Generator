@@ -22,11 +22,16 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 
 ### Methods
 
-#### pdf.setHeader(String html);
-* `pdf.setFooter(String html);`
-* `pdf.setTemplatePath(String path);`
-* `pdf.setParsedData(JSON parsedData);`
-* `pdf.generatePdf();`
+#### pdf.setHeader(html);
+  * `html` <string> A html template for print header  
+#### pdf.setFooter(html);
+  * `html` <string> A html template for print footer
+#### pdf.setTemplatePath(path);
+  * `path` <string> A path to set location of template
+#### pdf.setParsedData(JSON parsedData);
+  * `parsedData` <JSON> A json of data that will be displayed on the template
+#### pdf.generatePdf();
+  * Generate pdf with all the information set
 
 ### Use Rest example
 
