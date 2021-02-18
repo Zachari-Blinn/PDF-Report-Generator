@@ -15,6 +15,18 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 
 `const PuppeteerService = require('./src/service/puppeteer.service');`
 
+### Use
+
+`const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templatePath);`
+
+### Function
+
+Header: 
+`pdf.setHeader(html);`
+
+Footer:
+`pdf.setFooter(html);`
+
 ### Use example
 
 <p align="center">
