@@ -1,13 +1,15 @@
 # pdf-test
 
-### Description
+## Description
 
 pdf-test is a clean formatted integration of the google puppeteer addon
 
-### Generate an PDF
+## Generate an PDF
 
 For generating pdf, first you need to import the class named servicePuppeteer where he is located
 
 `const PuppeteerService = require('./src/service/puppeteer.service');`
 
+### Example
 
+![Google logo](https://www.google.fr/images/srpr/logo11w.png "google logo")
