@@ -33,3 +33,5 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 <p align="center">
   <img src="./img/use_example.png" alt="Size Limit CLI">
 </p>
+
+see the real integration at the following url: 
