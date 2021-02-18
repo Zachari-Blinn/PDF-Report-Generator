@@ -23,8 +23,8 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 
 * `pdf.setHeader(String html);`
 * `pdf.setFooter(String html);`
-* `pdf.setTemplatePath(String path)`
-* `pdf.setParsedData(JSON parsedData)`
+* `pdf.setTemplatePath(String path);`
+* `pdf.setParsedData(JSON parsedData);`
 
 ### Use example
 
