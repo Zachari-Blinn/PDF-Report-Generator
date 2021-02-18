@@ -7,7 +7,8 @@ pdf-test is a clean formatted integration of the google puppeteer addon
 ## Prerequisite and install
 
 1. Install in your project puppeteer with NPM: `npm i puppeteer`
-2. Recover and import ServicePuppeter file located in "/src/service/ServicePuppeteer" of this repository to your project
+2. [optionally] Install in your project uuid: `npm install uuid` or change the name generation otherwise
+3. Recover and import ServicePuppeter file located in "/src/service/ServicePuppeteer" of this repository to your project
 
 ## Generate an PDF
 
