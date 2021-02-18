@@ -6,13 +6,13 @@ pdf-test is a clean formatted integration of the google puppeteer addon for gene
 
 ## Prerequisite and install
 
-1. Install in your project puppeteer with NPM: ```shell npm i puppeteer```
-2. [optionally] Install in your project uuid: `npm install uuid` or change the name generation otherwise
-3. Recover and import ServicePuppeter file located in "/src/service/ServicePuppeteer" (at https://github.com/Zachari-Blinn/pdf-test/blob/master/src/service/puppeteer.service.js) of this repository to your project
+1. Install in your project puppeteer with NPM: `npm i puppeteer`.
+2. [optionally] Install in your project uuid: `npm install uuid` or change the name generation otherwise.
+3. Recover and import ServicePuppeter file located in "/src/service/ServicePuppeteer" (at https://github.com/Zachari-Blinn/pdf-test/blob/master/src/service/puppeteer.service.js) of this repository to your project.
 
 ## Generate an PDF
 
-For generating pdf with PuppeteerService, first you need to import the class named servicePuppeteer where he is located
+For generating pdf with PuppeteerService, first you need to import the class named servicePuppeteer where he is located.
 
 ```js
 const PuppeteerService = require('./src/service/puppeteer.service');
