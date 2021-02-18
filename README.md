@@ -34,4 +34,4 @@ For generating pdf with PuppeteerService, first you need to import the class nam
   <img src="./img/use_example.png" alt="Size Limit CLI">
 </p>
 
-see the real integration at the following url: 
+see the real integration at the following url: https://github.com/Zachari-Blinn/pdf-test/blob/master/server.js
