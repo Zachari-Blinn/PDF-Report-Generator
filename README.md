@@ -19,10 +19,12 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 
 `const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templatePath);`
 
-### Function
+### Methods
 
-* `pdf.setHeader(html);`
-* `pdf.setFooter(html);`
+* `pdf.setHeader(String html);`
+* `pdf.setFooter(String html);`
+* `pdf.setTemplatePath(String path)`
+* `pdf.setParsedData(JSON parsedData)`
 
 ### Use example
 
