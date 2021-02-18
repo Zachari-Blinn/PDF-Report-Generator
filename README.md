@@ -2,7 +2,7 @@
 
 ## Description
 
-pdf-test is a clean formatted integration of the google puppeteer addon
+pdf-test is a clean formatted integration of the google puppeteer addon for generate pdf report
 
 ## Prerequisite and install
 
