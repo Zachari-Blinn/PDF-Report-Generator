@@ -27,7 +27,7 @@ const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templat
 ### Methods
 
 #### pdf.setHeader(html);
-  * `html` <<string>> A html template for print header  
+  * `html` [string] A html template for print header  
 #### pdf.setFooter(html);
   * `html` <string> A html template for print footer
 #### pdf.setTemplatePath(path);
