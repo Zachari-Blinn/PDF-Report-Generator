@@ -6,4 +6,5 @@ pdf-test is a clean formatted integration of the google puppeteer addon
 
 ### Generate an PDF
 
-test
+For generating pdf, first you need to import the class named servicePuppeteer
+
