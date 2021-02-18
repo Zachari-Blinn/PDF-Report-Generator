@@ -17,3 +17,6 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 
 ### Use example
 
+<p align="center">
+  <img src="./img/example.png" alt="Size Limit CLI" width="738">
+</p>
