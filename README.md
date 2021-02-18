@@ -10,5 +10,5 @@ For generating pdf, first you need to import the class named servicePuppeteer wh
 
 `const PuppeteerService = require('./src/service/puppeteer.service');`
 
-### Example
+### Use example
 
