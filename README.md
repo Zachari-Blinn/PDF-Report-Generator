@@ -12,4 +12,3 @@ For generating pdf, first you need to import the class named servicePuppeteer wh
 
 ### Example
 
-![Google logo](https://carbon.now.sh/6090040e-fec7-4d72-beef-14aea518d2a9 "google logo")
