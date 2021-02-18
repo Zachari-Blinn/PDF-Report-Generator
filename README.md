@@ -29,11 +29,11 @@ const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templat
 #### pdf.setHeader(html);
   * `html` [string] A html template for print header  
 #### pdf.setFooter(html);
-  * `html` <string> A html template for print footer
+  * `html` [string] A html template for print footer
 #### pdf.setTemplatePath(path);
-  * `path` <string> A path to set location of template
+  * `path` [string] A path to set location of template
 #### pdf.setParsedData(JSON parsedData);
-  * `parsedData` <JSON> A json of data that will be displayed on the template
+  * `parsedData` [JSON] A json of data that will be displayed on the template
 #### pdf.generatePdf();
   * Generate pdf with all the information set
 
