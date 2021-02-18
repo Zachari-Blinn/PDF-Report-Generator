@@ -28,7 +28,7 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 * `pdf.setParsedData(JSON parsedData);`
 * `pdf.generatePdf();`
 
-### Use example
+### Use Rest example
 
 <p align="center">
   <img src="./img/use_example.png" alt="Size Limit CLI">
