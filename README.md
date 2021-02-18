@@ -21,11 +21,8 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 
 ### Function
 
-Header: 
-`pdf.setHeader(html);`
-
-Footer:
-`pdf.setFooter(html);`
+* `pdf.setHeader(html);`
+* `pdf.setFooter(html);`
 
 ### Use example
 
