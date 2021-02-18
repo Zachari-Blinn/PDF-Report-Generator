@@ -18,7 +18,9 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 
 ### Use
 
-`const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templatePath);`
+```js 
+const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templatePath);
+```
 
 ### Methods
 
@@ -40,8 +42,3 @@ For generating pdf with PuppeteerService, first you need to import the class nam
 </p>
 
 see the real integration at the following url: https://github.com/Zachari-Blinn/pdf-test/blob/master/server.js
-
-
-```js
-print(test)
-```
