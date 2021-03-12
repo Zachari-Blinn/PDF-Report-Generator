@@ -1,11 +1,9 @@
 const puppeteer = require('puppeteer');
 const { v4: uuidv4 } = require('uuid');
 const ejs = require('ejs');
-const Util = require('util');
-const Fs = require('fs');
-const ReadFile = Util.promisify(Fs.readFile);
+const fs = require('fs');
 
-class PuppeteerService {
+class PdfService {
 
   // Private attribute
   #name;
@@ -69,7 +67,7 @@ class PuppeteerService {
     try {
       const data = this.#parsedData;
 
-      const content = await ReadFile(this.#templatePath, 'utf8');
+      const content = fs.readFileSync(this.#templatePath, 'utf8');
 
       const templateWithData = ejs.compile(content);
 
@@ -88,7 +86,10 @@ class PuppeteerService {
     try {
       let uuid = await uuidv4();
 
-      const browser = await puppeteer.launch({headless: true});
+      const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--disable-dev-shm-usage', '--no-sandbox']
+      });
 
       const page = await browser.newPage();
 
@@ -101,10 +102,10 @@ class PuppeteerService {
         path: `src/upload/puppeteer/report-${uuid}.pdf`,
         format: 'A4',
         margin: {
-          bottom: 100,
-          left: 35,
-          right: 35,
-          top: 100
+          top: "50px",
+          bottom: "75",
+          left: "50px",
+          right: "50px"
         },
         displayHeaderFooter: !!(this.#header || this.#footer), //if header or footer != null then display
         headerTemplate: this.#header ?? '<div></div>',
@@ -124,4 +125,4 @@ class PuppeteerService {
   }
 }
 
-module.exports = PuppeteerService;
+module.exports = PdfService;

@@ -1,6 +1,5 @@
 var http = require('http');
 const express = require('express');
-var path = require('path');
 var bodyParser = require('body-parser');
 const Util = require('util')
 const Fs = require('fs')
@@ -8,16 +7,22 @@ const ReadFile = Util.promisify(Fs.readFile);
 
 const app = express();
 
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({
+  limit: '50mb'
+}));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 const port = 8080;
+
+app.use(express.static("src/public"));
 
 app.set('view engine', 'ejs');
 
 // PDF Maker generator
 const pdfMake = require('./src/service/pdfmake.service');
-const PuppeteerService = require('./src/service/puppeteer.service');
+const PdfService = require('./src/service/pdf.service');
 
 const content = {
   name: "je suis un petit test",
@@ -48,17 +53,25 @@ app.get('/pdfmake', async (req, res) => {
 });
 
 app.get('/puppeteer', async (req, res) => {
-  let pdf = new PuppeteerService();
+  let pdf = new PdfService();
 
   const rawData = await ReadFile('src/service/data.json');
-  const parsedData = {data: JSON.parse(rawData)};
+  const parsedData = {
+    data: JSON.parse(rawData)
+  };
 
   pdf.setTemplatePath('views/template/report.ejs');
   pdf.setParsedData(parsedData);
 
+  pdf.setHeader(`
+  <div style="color: lightgray; font-size: 10px; text-align: center; width: 100%;">
+    <img src="/images/logo.png" alt="logo" />
+  </div>
+  `);
+
   pdf.setFooter(`
-    <div style="color: lightgray; border-top: solid lightgray 1px; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
-      <span>This is a test message</span> - <span class="pageNumber"></span>
+    <div style="color: lightgray; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
+      <span>LNA SANTE</span> - <span class="pageNumber"></span>
     </div>
   `);
 
