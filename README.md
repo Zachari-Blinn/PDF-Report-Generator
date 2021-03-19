@@ -68,8 +68,31 @@ const generatedPdf = await pdf.generatePdf('/src/upload/report');
 
 ### Use Rest example
 
-<p align="center">
-  <img src="./img/use_example.png" alt="Size Limit CLI">
-</p>
+```js
+// Example
+app.get('/generatePDF', async (req, res) => {
+  const PDFGeneratorService = require('./src/service/PDFGeneratorService.js');
+  let pdf = new PDFGeneratorService();
+
+  const rawData = await ReadFile('src/service/response.json');
+  const parsedData = {
+    data: JSON.parse(rawData)
+  };
+
+  pdf.setName('LNA_SANTE');
+  pdf.setTemplatePath('views/template/report.ejs');
+  pdf.setParsedData(parsedData);
+
+  pdf.setFooter(`
+    <div style="color: lightgray; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
+      <span>LNA SANTE</span> - <span class="pageNumber"></span>/<span class='totalPages'></span>
+    </div>
+  `);
+
+  const generatedPdf = await pdf.generatePdf('/src/upload');
+
+  res.download(generatedPdf.path, 'report.pdf')
+})
+```
 
 see the real integration at the following url: https://github.com/Zachari-Blinn/pdf-test/blob/master/server.js
