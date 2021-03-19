@@ -66,7 +66,7 @@ pdf.setParsedData(parsedData);
 const generatedPdf = await pdf.generatePdf('/src/upload/report');
 ```
 
-### Use Rest example
+### Use in Rest Controller example
 
 ```js
 // Example
@@ -79,10 +79,10 @@ app.get('/generatePDF', async (req, res) => {
     data: JSON.parse(rawData)
   };
 
+  // Define the customs properties of the pdf
   pdf.setName('LNA_SANTE');
   pdf.setTemplatePath('views/template/report.ejs');
   pdf.setParsedData(parsedData);
-
   pdf.setFooter(`
     <div style="color: lightgray; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
       <span>LNA SANTE</span> - <span class="pageNumber"></span>/<span class='totalPages'></span>
