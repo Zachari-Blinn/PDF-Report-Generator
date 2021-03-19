@@ -20,7 +20,7 @@ const PDFGeneratorService = require('./src/service/PDFGeneratorService');
 
 ### Use
 
-```
+```js
 const pdf = new PDFGeneratorService(name, header, footer, parsedData, templatePath);
 ```
 
