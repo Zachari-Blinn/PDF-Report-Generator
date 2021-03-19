@@ -1,0 +1,356 @@
+[
+    {
+        "name": "Commission de sécurité 3 ans",
+        "frequency": "tous les 3 ans",
+        "nextmaintenancedate": "2021-12-19T09:00:34.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2018-12-19T10:00:34",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": {
+                    "id": "613a112a-5f02-4655-9128-2c49e803fbb7",
+                    "createdAt": 1592824285480,
+                    "updatedAt": 1605751592285,
+                    "username": "stephane.beaugrand",
+                    "title": "M",
+                    "firstname": "Stéphane",
+                    "lastname": "Beaugrand",
+                    "email": "atm.vendeuvresurbarse@groupecolisee.com",
+                    "phone": null,
+                    "mobilePhone": null,
+                    "passwordResetToken": "",
+                    "passwordResetTokenExpiresAt": 0,
+                    "lastSeenAt": "2020-11-10T09:01:07.285",
+                    "position": "91c4874b-b04f-456e-bedf-6a971d096cd8",
+                    "customer": "00b2a595-0898-48c6-a765-d323e1f79269",
+                    "provider": null,
+                    "themeName": "theme1",
+                    "locale": "fr-FR",
+                    "showDataBlocs": true,
+                    "selectedestate": null,
+                    "createdBy": "613a112a-5f02-4655-9128-2c49e803fbb7",
+                    "owner": "613a112a-5f02-4655-9128-2c49e803fbb7",
+                    "originalRecord": null,
+                    "is_active": true,
+                    "reference": "23324",
+                    "originalReference": null,
+                    "defaultDashboard": null,
+                    "uiConfig": {
+                        "notDisplay": {
+                            "issueAdd": true,
+                            "readingAdd": true
+                        }
+                    }
+                },
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Contrôle ascenseur (RVRE)",
+        "frequency": "tous les 5 ans",
+        "nextmaintenancedate": "2025-08-20T22:00:00.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-08-21T00:00:00",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Contrôle désenfumage avec mesure débits A/B",
+        "frequency": "tous les 3 ans",
+        "nextmaintenancedate": "2023-09-21T22:00:00.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-09-22T00:00:00",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Contrôle électricité code du travail",
+        "frequency": "tous les ans",
+        "nextmaintenancedate": "2021-02-12T08:54:17.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-02-12T09:54:17",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 18,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Contrôle équipement thermique / gaz",
+        "frequency": "tous les ans",
+        "nextmaintenancedate": "2021-09-13T22:00:00.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-09-14T00:00:00",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Contrôle système sécurité incendie A/B",
+        "frequency": "tous les 3 ans",
+        "nextmaintenancedate": "2023-06-26T13:35:09.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-06-26T15:35:09",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Contrôle technique ascenseur",
+        "frequency": "tous les 5 ans",
+        "nextmaintenancedate": "2024-07-22T08:06:44.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2019-07-22T10:06:44",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance ascenseur (câbles, cabine)",
+        "frequency": "tous les 6 mois",
+        "nextmaintenancedate": "2020-12-19T13:55:38.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-06-19T15:55:38",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance ascenseur (essais parachute et de sécurité)",
+        "frequency": "tous les ans",
+        "nextmaintenancedate": "2021-11-18T14:58:41.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-11-18T15:58:41",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance ascenseur (roulements, graisse...)",
+        "frequency": "tous les 6 semaines",
+        "nextmaintenancedate": "2020-10-01T22:00:00.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-11-18T15:57:31",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance chaudière >400kwh (contrôle combustion)",
+        "frequency": "tous les 3 mois",
+        "nextmaintenancedate": "2020-06-16T15:12:04.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-03-16T16:12:04",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": false,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance matériel cuisine chaud",
+        "frequency": "tous les ans",
+        "nextmaintenancedate": "2021-06-12T08:52:01.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-06-12T10:52:01",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 2,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance portail automatique",
+        "frequency": "tous les 6 mois",
+        "nextmaintenancedate": "2020-12-30T22:00:00.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-07-01T00:00:00",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance porte automatique",
+        "frequency": "tous les 6 mois",
+        "nextmaintenancedate": "2020-12-30T22:00:00.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-07-01T00:00:00",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Maintenance poteau incendie",
+        "frequency": "tous les 2 ans",
+        "nextmaintenancedate": "2021-09-10T08:22:53.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2019-09-10T10:22:53",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    },
+    {
+        "name": "Ramonage chaudière",
+        "frequency": "tous les ans",
+        "nextmaintenancedate": "2021-03-16T15:22:37.000Z",
+        "maintenanceTaskGroups": [
+            {
+                "date": "2020-03-16T16:22:37",
+                "location": "COLISEE - GRAND EST - VSB - EHPAD Parc du Château  / EHPAD Parc du château",
+                "is_conform": true,
+                "provider": {},
+                "user": null,
+                "maintainedElements": 1,
+                "numberReserves": 0,
+                "resolvedReserves": 0,
+                "reserves": [],
+                "media": [],
+                "comments": []
+            }
+        ]
+    }
+]
