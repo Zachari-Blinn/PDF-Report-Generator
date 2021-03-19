@@ -1,4 +1,4 @@
-# PDF Report Generator with puppeteer
+# PDF Report Generator (with puppeteer)
 
 ## Description
 
