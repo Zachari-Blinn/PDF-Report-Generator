@@ -34,7 +34,8 @@ const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templat
   * `path` [string] A path to set location of template
 #### pdf.setParsedData(JSON parsedData);
   * `parsedData` [JSON] A json of data that will be displayed on the template
-#### pdf.generatePdf();
+#### pdf.generatePdf(uploadPath);
+  * `uploadPath` [string] A upload path for generate pdf
   * Generate pdf with all the information set
 
 ### Use Rest example
