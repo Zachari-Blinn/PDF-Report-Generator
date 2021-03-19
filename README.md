@@ -30,8 +30,20 @@ const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templat
   * `html` [string] A html template for print header  
 #### pdf.setFooter(html);
   * `html` [string] A html template for print footer
+```js
+// Example
+pdf.setFooter(`
+ <div style="color: lightgray; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
+   <span>LNA SANTE</span> - <span class="pageNumber"></span>/<span class='totalPages'></span>
+ </div>
+`);
+```
 #### pdf.setTemplatePath(path);
   * `path` [string] A path to set location of template
+```js
+// Example
+pdf.setTemplatePath('views/template/report.ejs');
+```
 #### pdf.setParsedData(JSON parsedData);
   * `parsedData` [JSON] A json of data that will be displayed on the template
 ```js
