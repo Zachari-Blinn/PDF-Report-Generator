@@ -15,7 +15,7 @@ pdf-test is a clean formatted integration of the google puppeteer addon for gene
 For generating pdf with PuppeteerService, first you need to import the class named servicePuppeteer where he is located.
 
 ```js
-const PDFGeneratorService = require('./src/service/puppeteer.service');
+const PDFGeneratorService = require('./src/service/PDFGeneratorService');
 ```
 
 ### Use
