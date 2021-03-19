@@ -40,6 +40,7 @@ const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templat
   * Generate pdf with all the information set
 Example:
 ```js
+// Example
 const generatedPdf = await pdf.generatePdf('/src/upload/report');
 ```
 
