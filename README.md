@@ -71,9 +71,11 @@ const generatedPdf = await pdf.generatePdf('/src/upload/report');
 ```js
 // Example
 app.get('/generatePDF', async (req, res) => {
+  // Import and call the PDFGeneratorService
   const PDFGeneratorService = require('./src/service/PDFGeneratorService.js');
   let pdf = new PDFGeneratorService();
 
+  // Setup the provided data
   const rawData = await ReadFile('src/service/response.json');
   const parsedData = {
     data: JSON.parse(rawData)
@@ -89,6 +91,7 @@ app.get('/generatePDF', async (req, res) => {
     </div>
   `);
 
+  // And finally, call the pdf generation function
   const generatedPdf = await pdf.generatePdf('/src/upload');
 
   res.download(generatedPdf.path, 'report.pdf')
