@@ -20,7 +20,8 @@ const PuppeteerService = require('./src/service/puppeteer.service');
 
 ### Use
 
-```js 
+```
+// Example
 const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templatePath);
 ```
 
