@@ -44,7 +44,7 @@ pdf.setFooter(`
   * `path` [string] A path to set location of template
 ```js
 // Example
-pdf.setTemplatePath('views/template/report.ejs');
+pdf.setTemplatePath('views/template/reportTemplate.ejs');
 ```
 #### pdf.setParsedData(JSON parsedData);
   * `parsedData` [JSON] A json of data that will be displayed on the template
@@ -83,7 +83,7 @@ app.get('/generatePDF', async (req, res) => {
 
   // Define the customs properties of the pdf
   pdf.setName('LNA_SANTE');
-  pdf.setTemplatePath('views/template/report.ejs');
+  pdf.setTemplatePath('views/template/reportTemplate.ejs');
   pdf.setParsedData(parsedData);
   pdf.setFooter(`
     <div style="color: lightgray; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
