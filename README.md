@@ -21,7 +21,6 @@ const PuppeteerService = require('./src/service/puppeteer.service');
 ### Use
 
 ```
-// Example
 const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templatePath);
 ```
 
@@ -35,10 +34,19 @@ const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templat
   * `path` [string] A path to set location of template
 #### pdf.setParsedData(JSON parsedData);
   * `parsedData` [JSON] A json of data that will be displayed on the template
+```js
+// Example
+const rawData = await ReadFile('src/service/response.json');
+
+const parsedData = {
+  data: JSON.parse(rawData)
+};
+
+pdf.setParsedData(parsedData);
+```
 #### pdf.generatePdf(uploadPath);
   * `uploadPath` [string] A upload path for generate pdf
   * Generate pdf with all the information set
-Example:
 ```js
 // Example
 const generatedPdf = await pdf.generatePdf('/src/upload/report');
