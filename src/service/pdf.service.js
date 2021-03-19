@@ -103,7 +103,7 @@ class PdfService {
         format: 'A4',
         margin: {
           top: "50px",
-          bottom: "75",
+          bottom: "45px",
           left: "50px",
           right: "50px"
         },
@@ -124,5 +124,6 @@ class PdfService {
     }
   }
 }
+
 
 module.exports = PdfService;

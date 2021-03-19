@@ -21,7 +21,6 @@ app.use(express.static("src/public"));
 app.set('view engine', 'ejs');
 
 // PDF Maker generator
-const pdfMake = require('./src/service/pdfmake.service');
 const PdfService = require('./src/service/pdf.service');
 
 const content = {
@@ -35,7 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/report/pdf', async (req, res) => {
-  const dataPath = 'src/service/data.json';
+  const dataPath = 'src/service/data1.json';
 
   const rawdata = await ReadFile(dataPath);
   const parsedData = JSON.parse(rawdata);
@@ -47,27 +46,17 @@ app.get('/report/pdf', async (req, res) => {
   res.render('template/report', data)
 })
 
-app.get('/pdfmake', async (req, res) => {
-  await pdfMake(content);
-  res.render('pages/index');
-});
 
 app.get('/puppeteer', async (req, res) => {
   let pdf = new PdfService();
 
-  const rawData = await ReadFile('src/service/data.json');
+  const rawData = await ReadFile('src/service/data1.json');
   const parsedData = {
     data: JSON.parse(rawData)
   };
 
   pdf.setTemplatePath('views/template/report.ejs');
   pdf.setParsedData(parsedData);
-
-  pdf.setHeader(`
-  <div style="color: lightgray; font-size: 10px; text-align: center; width: 100%;">
-    <img src="/images/logo.png" alt="logo" />
-  </div>
-  `);
 
   pdf.setFooter(`
     <div style="color: lightgray; font-size: 10px; padding-top: 5px; text-align: center; width: 100%;">
