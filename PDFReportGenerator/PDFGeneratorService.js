@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const ejs = require('ejs');
 const fs = require('fs');
 
-class PdfService {
+class PDFGeneratorService {
 
   // Private attribute
   #name;
@@ -126,4 +126,4 @@ class PdfService {
 }
 
 
-module.exports = PdfService;
+module.exports = PDFGeneratorService;
