@@ -37,9 +37,9 @@ const pdf = new PuppeteerService(name, logo, header, footer, parsedData, templat
 #### pdf.generatePdf(uploadPath);
   * `uploadPath` [string] A upload path for generate pdf
   * Generate pdf with all the information set
-##### Example:
+Example:
 ```js
-const pdf.generatePdf('/src/upload/report')
+const generatedPdf = await pdf.generatePdf('/src/upload/report');
 ```
 
 ### Use Rest example
